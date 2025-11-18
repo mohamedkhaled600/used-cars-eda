@@ -10,7 +10,7 @@ st.image('https://storage.googleapis.com/kaggle-datasets-images/62920/121792/0b2
 
 page = st.sidebar.radio('Page', ['Home', 'Univariate', 'Multivariate'])
 
-df = pd.read_csv('cleaned_df.csv', index_col= 0)
+df = pd.read_parquet('cleaned_df.parquet')
 sample_df = df.sample(50)
 if page == 'Home':
     st.header('Dataset Overview')
